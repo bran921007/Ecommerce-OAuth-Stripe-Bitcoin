@@ -1,3 +1,6 @@
+# Ecommerce-OAuth-Stripe-Bitcoin
+Ecommerce desarrollado en Laravel 5 con socialite, procesador de pago stripe e implementacion de pagos en bitcoin
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
