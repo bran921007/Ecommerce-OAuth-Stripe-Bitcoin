@@ -2,3 +2,11 @@
 .env.*.php
 .env.php
 .env
+/vendor
+*vendor*
+composer.phar
+composer.lock
+.DS_Store
+Thumbs.db
+
+tests/_output/*
