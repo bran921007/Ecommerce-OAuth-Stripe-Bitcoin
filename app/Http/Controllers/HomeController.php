@@ -1,11 +1,12 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests\ArticleRequest;
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 //use Illuminate\Routing\Controller;
 use Carbon\Carbon;
 use App\Article;
-//use Symfony\Component\HttpFoundation\Request;
+use Auth;
+use Symfony\Component\HttpFoundation\Request;
 
 class HomeController extends Controller {
 
@@ -72,17 +73,24 @@ class HomeController extends Controller {
 
     public function store(ArticleRequest $request)
     {
+
         $request = $request->all();
-        $request['user_id'] = Auth::id;
-        Article::create($request->all());
+        $request['user_id'] = Auth::user()->id;
+        Article::create($request);
         return redirect('/')->with(['success'=>'true','msg'=>'Post creado satisfactoriamente']);
 
     }
 
-    public function edit($id, ArticleRequest $request)
-    {
+    public function update($id, ArticleRequest $request){
         $article = Article::findOrFail($id);
         $article->update($request->all());
+        return redirect('/')->with(['success'=>'true','msg'=>'Post creado satisfactoriamente']);;
+    }
+
+    public function edit($id)
+    {
+        $article = Article::findOrFail($id);
+        return view('update',compact('article'));
     }
 
     public function delete($id, ArticleRequest $request)

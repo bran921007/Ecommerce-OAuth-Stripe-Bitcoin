@@ -9,6 +9,6 @@
         </div>
 
         <div class="form-group">
-            {!! Form::submit('Add Article',['class'=>'btn btn-primary form-control']) !!}
+            {!! Form::submit($buttonSubmit,['class'=>'btn btn-primary form-control']) !!}
         </div>
 

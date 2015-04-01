@@ -22,10 +22,10 @@ class CreateArticlesTable extends Migration {
 			$table->timestamp('published_at');
 
 //            Borrar los articulos de un usuario cuando este borre su cuenta
-            $table->foreign('user_id')
-                  ->references('id')
-                  ->on('users')
-                  ->onDelete('cascade');
+//            $table->foreign('user_id')
+//                  ->references('id')
+//                  ->on('users')
+//                  ->onDelete('cascade');
 		});
 	}
 
